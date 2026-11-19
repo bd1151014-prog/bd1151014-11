@@ -1,172 +1,185 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>李梅花 | 個人簡歷</title>
+    <title>李梅花 | 個人作品集與簡歷</title>
     
-    <!-- 引入 Tailwind CSS 進行快速且現代的排版 -->
+    <!-- 引入 Tailwind CSS 用於快速樣式設計 -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- 引入 Font Awesome 以使用精美的圖示 -->
+    <!-- 引入 FontAwesome 用於圖標 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- 引入 Google Fonts 中文字體 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- 引入 Google 字體 (Noto Sans TC) 以優化中文顯示 -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
-
+    
     <style>
         body {
             font-family: 'Noto Sans TC', sans-serif;
-            background-color: #f8fafc; /* 乾淨的淺灰背景 */
+            background-color: #f8fafc; /* 非常淺的灰藍色背景，營造乾淨明亮的感覺 */
         }
         
-        /* 簡單的載入動畫 */
-        .fade-in {
-            animation: fadeIn 0.8s ease-in-out forwards;
-            opacity: 0;
-            transform: translateY(10px);
+        /* 卡片懸停動畫效果 */
+        .hover-card-effect {
+            transition: all 0.3s ease;
         }
-        
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .hover-card-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
-<body class="text-slate-700 antialiased min-h-screen flex items-center justify-center p-4 md:p-8">
+<body class="text-gray-800 antialiased min-h-screen py-10 px-4 sm:px-6 lg:px-8">
 
-    <!-- 網頁主要卡片容器 -->
-    <main class="max-w-4xl w-full bg-white rounded-3xl shadow-lg overflow-hidden fade-in border border-slate-100">
+    <!-- 主要容器 -->
+    <main class="max-w-4xl mx-auto space-y-8">
         
-        <!-- 頂部橫幅 (Banner) -->
-        <div class="h-40 bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50"></div>
-
-        <!-- 內容區域 -->
-        <div class="px-6 md:px-12 pb-12 relative">
-            
-            <!-- 大頭貼 (Profile Picture) -->
-            <!-- 這裡引用了您指定的照片檔案 1000016305.jpg -->
-            <div class="flex justify-center -mt-20 mb-6">
-                <div class="relative w-36 h-36 rounded-full border-4 border-white shadow-md bg-white overflow-hidden flex items-center justify-center">
-                    <img src="1000016305.jpg" alt="李梅花" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/200x200/e2e8f0/64748b?text=Photo';">
+        <!-- 頂部區塊：個人簡介與照片 (Hero Section) -->
+        <section class="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover-card-effect p-8 sm:p-10 flex flex-col md:flex-row items-center gap-10">
+            <!-- 照片區塊 (預留照片位置) -->
+            <div class="flex-shrink-0 relative group cursor-pointer">
+                <!-- 這邊使用了一個佔位圖片，您可以將 src 替換為您的真實照片路徑 -->
+                <img src="https://placehold.co/400x400/e2e8f0/475569?text=照片放置處" 
+                     alt="李梅花的照片" 
+                     class="w-48 h-48 md:w-56 md:h-56 rounded-full object-cover shadow-md border-4 border-white transition-transform duration-300 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 rounded-full transition-all duration-300 flex items-center justify-center">
+                    <span class="text-white opacity-0 group-hover:opacity-100 font-medium drop-shadow-md">更換照片</span>
                 </div>
             </div>
 
-            <!-- 個人簡介 (Header) -->
-            <div class="text-center mb-10">
-                <h1 class="text-3xl md:text-4xl font-bold text-slate-800 tracking-wide mb-2">李梅花</h1>
-                <p class="text-lg text-indigo-600 font-medium mb-4 flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-graduation-cap"></i> 黎明技術學院數位多媒體系
+            <!-- 文字介紹區塊 -->
+            <div class="text-center md:text-left flex-1">
+                <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">李梅花</h1>
+                <p class="text-indigo-600 font-medium text-lg mt-2 flex items-center justify-center md:justify-start gap-2">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    黎明技術學院 數位多媒體系
                 </p>
-                <div class="inline-block bg-slate-50 rounded-2xl px-6 py-4 border border-slate-100 max-w-lg">
-                    <p class="text-slate-600 text-base leading-relaxed">
-                        「喜歡簡單生活，也喜歡認真對待每㇐件事。」
+                <div class="mt-5 relative">
+                    <div class="absolute -left-4 top-0 text-gray-200 text-4xl hidden md:block">"</div>
+                    <p class="text-gray-600 text-lg leading-relaxed relative z-10 md:pl-2">
+                        喜歡簡單生活，也喜歡認真對待每㇐件事。
                     </p>
                 </div>
             </div>
+        </section>
 
-            <!-- 兩欄式佈局：技能/興趣 與 聯絡方式 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- 網格佈局：技能、興趣與聯絡方式 -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- 左側欄：技能與興趣 (佔據 2 列寬度) -->
+            <div class="md:col-span-2 space-y-8">
                 
-                <!-- 左欄：技能與興趣 -->
-                <div class="space-y-8">
-                    
-                    <!-- 技能 -->
-                    <section class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-                        <h2 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-3">
-                            <span class="w-10 h-10 rounded-full bg-blue-50 text-blue-500 flex items-center justify-center">
-                                <i class="fa-solid fa-laptop-code"></i>
-                            </span>
-                            我的技能
-                        </h2>
-                        <div class="flex flex-wrap gap-3 pl-2 md:pl-12">
-                            <span class="px-4 py-2 bg-blue-50 border border-blue-100 text-blue-700 rounded-xl font-medium flex items-center gap-2">
-                                <i class="fa-solid fa-code text-blue-400"></i> 寫代碼
-                            </span>
-                            <span class="px-4 py-2 bg-blue-50 border border-blue-100 text-blue-700 rounded-xl font-medium flex items-center gap-2">
-                                <i class="fa-solid fa-square-root-variable text-blue-400"></i> 微積分
-                            </span>
+                <!-- 技能區塊 -->
+                <section class="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 hover-card-effect h-full">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-500">
+                            <i class="fa-solid fa-laptop-code text-xl"></i>
                         </div>
-                    </section>
-
-                    <!-- 興趣 -->
-                    <section class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-                        <h2 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-3">
-                            <span class="w-10 h-10 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center">
-                                <i class="fa-solid fa-heart"></i>
-                            </span>
-                            我的興趣
-                        </h2>
-                        <div class="flex flex-wrap gap-3 pl-2 md:pl-12">
-                            <span class="px-4 py-2 bg-emerald-50 border border-emerald-100 text-emerald-700 rounded-xl font-medium flex items-center gap-2">
-                                <i class="fa-solid fa-book-open text-emerald-400"></i> 讀書
-                            </span>
-                            <span class="px-4 py-2 bg-emerald-50 border border-emerald-100 text-emerald-700 rounded-xl font-medium flex items-center gap-2">
-                                <i class="fa-solid fa-bed text-emerald-400"></i> 睡覺
-                            </span>
-                        </div>
-                    </section>
-
-                </div>
-
-                <!-- 右欄：聯絡方式 -->
-                <div class="bg-slate-50 rounded-2xl p-6 md:p-8 border border-slate-100 h-full">
-                    <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-3">
-                        <span class="w-10 h-10 rounded-full bg-purple-50 text-purple-500 flex items-center justify-center">
-                            <i class="fa-regular fa-id-badge"></i>
-                        </span>
-                        聯繫方式
-                    </h2>
+                        <h2 class="text-2xl font-bold text-gray-800">我的技能</h2>
+                    </div>
                     
-                    <ul class="space-y-4">
-                        <!-- Email -->
-                        <li>
-                            <a href="mailto:bd1151014@venus.lit.edu.tw" class="group flex items-center gap-4 p-4 rounded-xl bg-white shadow-sm hover:shadow-md transition-all border border-slate-100 hover:border-blue-200">
-                                <div class="w-10 h-10 rounded-full bg-blue-50 text-blue-500 flex items-center justify-center group-hover:bg-blue-500 group-hover:text-white transition-colors shrink-0">
-                                    <i class="fa-regular fa-envelope"></i>
-                                </div>
-                                <div class="overflow-hidden">
-                                    <p class="text-xs text-slate-400 mb-1">Email</p>
-                                    <p class="text-slate-800 font-medium truncate">bd1151014@venus.lit.edu.tw</p>
-                                </div>
-                            </a>
-                        </li>
-                        
-                        <!-- Line -->
-                        <li>
-                            <div class="group flex items-center gap-4 p-4 rounded-xl bg-white shadow-sm hover:shadow-md transition-all border border-slate-100 hover:border-green-200 cursor-default">
-                                <div class="w-10 h-10 rounded-full bg-green-50 text-green-500 flex items-center justify-center group-hover:bg-green-500 group-hover:text-white transition-colors shrink-0">
-                                    <i class="fa-brands fa-line text-lg"></i>
-                                </div>
-                                <div>
-                                    <p class="text-xs text-slate-400 mb-1">Line ID</p>
-                                    <p class="text-slate-800 font-medium">thip (李梅花)</p>
-                                </div>
-                            </div>
-                        </li>
-
-                        <!-- Instagram -->
-                        <li>
-                            <a href="https://instagram.com/thip._.1234" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-4 p-4 rounded-xl bg-white shadow-sm hover:shadow-md transition-all border border-slate-100 hover:border-pink-200">
-                                <div class="w-10 h-10 rounded-full bg-pink-50 text-pink-500 flex items-center justify-center group-hover:bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 group-hover:text-white transition-colors shrink-0">
-                                    <i class="fa-brands fa-instagram"></i>
-                                </div>
-                                <div>
-                                    <p class="text-xs text-slate-400 mb-1">Instagram</p>
-                                    <p class="text-slate-800 font-medium">@thip._.1234</p>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                    <div class="flex flex-wrap gap-4 mt-4">
+                        <!-- 技能標籤 1 -->
+                        <div class="px-5 py-3 bg-gray-50 border border-gray-100 rounded-2xl flex items-center gap-3 hover:bg-indigo-50 hover:border-indigo-100 transition-colors">
+                            <i class="fa-solid fa-code text-indigo-500"></i>
+                            <span class="font-medium text-gray-700 text-lg">寫代碼</span>
+                        </div>
+                        <!-- 技能標籤 2 -->
+                        <div class="px-5 py-3 bg-gray-50 border border-gray-100 rounded-2xl flex items-center gap-3 hover:bg-indigo-50 hover:border-indigo-100 transition-colors">
+                            <i class="fa-solid fa-square-root-variable text-indigo-500"></i>
+                            <span class="font-medium text-gray-700 text-lg">微積分</span>
+                        </div>
+                    </div>
+                </section>
 
             </div>
-            
+
+            <!-- 右側欄：聯絡方式與興趣 (佔據 1 列寬度) -->
+            <div class="space-y-8">
+                
+                <!-- 興趣區塊 -->
+                <section class="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 hover-card-effect">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-full bg-rose-50 flex items-center justify-center text-rose-500">
+                            <i class="fa-solid fa-heart text-xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-800">我的興趣</h2>
+                    </div>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-4 bg-gray-50 p-4 rounded-2xl">
+                            <div class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-600">
+                                <i class="fa-solid fa-headphones"></i>
+                            </div>
+                            <span class="font-medium text-gray-700">聽音樂</span>
+                        </li>
+                        <li class="flex items-center gap-4 bg-gray-50 p-4 rounded-2xl">
+                            <div class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-600">
+                                <i class="fa-solid fa-bed"></i>
+                            </div>
+                            <span class="font-medium text-gray-700">睡覺</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- 聯絡方式區塊 -->
+                <section class="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 hover-card-effect">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-500">
+                            <i class="fa-solid fa-address-card text-xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-800">聯繫方式</h2>
+                    </div>
+                    
+                    <div class="space-y-5">
+                        <!-- Email -->
+                        <div class="flex items-start gap-4 group">
+                            <div class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 group-hover:bg-emerald-50 group-hover:text-emerald-600 transition-colors flex-shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="overflow-hidden">
+                                <p class="text-sm text-gray-500 mb-0.5">Email</p>
+                                <a href="mailto:bd1151014@venus.lit.edu.tw" class="font-medium text-gray-800 hover:text-emerald-600 transition-colors truncate block text-sm sm:text-base">
+                                    bd1151014@venus.lit.edu.tw
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Line -->
+                        <div class="flex items-start gap-4 group">
+                            <div class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 group-hover:bg-[#00B900] group-hover:text-white transition-colors flex-shrink-0">
+                                <i class="fa-brands fa-line text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-0.5">Line ID</p>
+                                <p class="font-medium text-gray-800">Thip(李梅花）</p>
+                            </div>
+                        </div>
+
+                        <!-- Instagram -->
+                        <div class="flex items-start gap-4 group">
+                            <div class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 group-hover:bg-gradient-to-tr group-hover:from-yellow-400 group-hover:via-red-500 group-hover:to-purple-500 group-hover:text-white transition-all flex-shrink-0">
+                                <i class="fa-brands fa-instagram text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-0.5">Instagram</p>
+                                <a href="https://instagram.com/thip._.1234" target="_blank" class="font-medium text-gray-800 hover:text-pink-600 transition-colors">
+                                    thip._.1234
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+            </div>
         </div>
+
+        <!-- 頁尾 -->
+        <footer class="text-center text-gray-400 text-sm pt-8 pb-4">
+            <p>&copy; 2026 李梅花. All rights reserved.</p>
+        </footer>
+
     </main>
 
 </body>
